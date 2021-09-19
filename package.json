@@ -1,0 +1,31 @@
+{
+  "name": "vvideo",
+  "version": "1.0.0",
+  "description": "Webpage to watch videos founded on severous sources",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/"
+  },
+  "keywords": [
+    "Video",
+    "movies",
+    "reality",
+    "videos",
+    "peliculas",
+    "realities",
+    "español"
+  ],
+  "author": "Luis Fonseca",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.3",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "mongoose": "^6.0.6",
+    "timeago.js": "^4.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
