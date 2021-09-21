@@ -1,7 +1,7 @@
 const express = require('express');
 const routes = require('./routes');
 const mongoose = require('mongoose');
-const session = require('cookie-session');
+const session = require('express-session');
 const config = require('./config.json');
 
 // CONECTAR CON MONGO 
@@ -21,7 +21,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(session({
     secret: "GodNashee",
     resave: false,
-    saveUninitialized: true
+    saveUninitialized: true,
+    store: new RedisStore()
 }))
 
 // RUTAS DE LA APP
