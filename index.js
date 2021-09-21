@@ -1,7 +1,7 @@
 const express = require('express');
 const routes = require('./routes');
 const mongoose = require('mongoose');
-const session = require('express-session');
+const session = require('cookie-session');
 const config = require('./config.json');
 
 // CONECTAR CON MONGO 
