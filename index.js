@@ -10,6 +10,8 @@ mongoose.connect(`mongodb+srv://${config.MONGODB_USER}:${config.MONGODB_PASSWORD
     useNewUrlParser: true
 });
 
+const PORT = process.env.PORT || 4000;
+
 // CREAR EL SERVIDOR 
 const app = express();
 
@@ -30,6 +32,6 @@ app.use('/', routes());
 
 
 // PUERTO
-app.listen(4000, () => {
-    console.log('listening on', 4000);
+app.listen(PORT, () => {
+    console.log('listening on', PORT);
 });
