@@ -38,7 +38,18 @@ exports.iniciarSesion = async (req, res, next) => {
         console.log(err);
         next(err);
     });
-}
+};
+
+exports.cerrarSesion = async (req, res, next) => {
+    if (req.session.user) {
+        req.session.destroy();
+        res.status(200).json({mensaje: 'SESION CERRADA'});
+    }else {
+        console.log('ERROR AL OBTENER LA VARIABLE DE SESION');
+        res.status(403).json({mensaje: 'ERROR AL OBTENER LA VARIABLE DE SESION'})
+        next();
+    }
+};
 
 exports.obtenerUsuario = async (req, res, next) => {
     try{
@@ -50,11 +61,11 @@ exports.obtenerUsuario = async (req, res, next) => {
             }
             res.json(usuario);
         }else{
-            res.status(402).json({mensaje: 'NO SE HA AUTENTICADO EL USUARIO'});
+            res.status(403).json({mensaje: 'NO SE HA AUTENTICADO EL USUARIO'});
             next();
         }
     }catch (e) {
-        res.status(402).json({mensaje: 'OCURRIO UN ERROR'});
+        res.status(403).json({mensaje: 'OCURRIO UN ERROR'});
         console.log(e);
         next(e);
     }

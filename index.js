@@ -2,10 +2,11 @@ const express = require('express');
 const routes = require('./routes');
 const mongoose = require('mongoose');
 const session = require('express-session');
+const config = require('./config.json');
 
 // CONECTAR CON MONGO 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/vvideo', {
+mongoose.connect(`mongodb+srv://${config.MONGODB_USER}:${config.MONGODB_PASSWORD}${config.MONGODB_HOST}/${config.MONGODB_DATABASE}`, {
     useNewUrlParser: true
 });
 

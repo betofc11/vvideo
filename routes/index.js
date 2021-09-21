@@ -9,17 +9,26 @@ module.exports = () => {
     // AGREGANDO NUEVOS USUARIOS
     router.post('/usuarios', usuariosController.agregaUsuario);
 
-    // OBTENER TODOS USUARIOS
+    // OBTENER USUARIO
     router.get('/usuarios/:id', usuariosController.obtenerUsuario);
 
-    // OBTENER TODOS USUARIOS
+    // INICIAR SESION
     router.post('/login', usuariosController.iniciarSesion);
+
+    // CERRAR SESION
+    router.post('/logout', usuariosController.cerrarSesion);
 
     // AGREGANDO NUEVO VIDEO 
     router.post('/videos', videosController.agregaVideo);
 
-    // AGREGANDO NUEVO VIDEO 
+    // OBTENER VIDEO 
     router.get('/videos/:id', videosController.obtenerVideo);
+
+    // OBTENER VIDEOS 
+    router.get('/videos/', videosController.obtenerVideos);
+
+    // ELIMINAR VIDEO 
+    router.delete('/videos/:id', videosController.eliminarVideo);
 
     return router;
 }
