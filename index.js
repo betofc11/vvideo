@@ -23,8 +23,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(session({
     secret: "GodNashee",
     resave: false,
-    saveUninitialized: true,
-    store: new RedisStore()
+    saveUninitialized: true
 }))
 
 // RUTAS DE LA APP
