@@ -4,7 +4,7 @@
   "description": "Webpage to watch videos founded on severous sources",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon src/"
+    "start": "node index.js"
   },
   "keywords": [
     "Video",
