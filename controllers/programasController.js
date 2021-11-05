@@ -26,7 +26,7 @@ exports.agregaPrograma = async (req, res, next) => {
 
 exports.obtenerPrograma = async (req, res, next) => {
     try{
-        const programa = await Programas.findById(req.params.id);
+        const programa = await Programas.find({siglas: req.params.siglas});
         res.json(programa);
     }catch (e) {
         res.status(403).json({mensaje: 'OCURRIO UN ERROR'});
