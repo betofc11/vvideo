@@ -9,6 +9,10 @@ const programasSchema = new Schema({
     siglas:{
         type: String,
         trim: true
+    },
+    imagen: {
+        type: String,
+        trim: true
     }
 });
 

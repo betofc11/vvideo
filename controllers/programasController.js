@@ -5,7 +5,7 @@ exports.agregaPrograma = async (req, res, next) => {
     const programa = new Programas(req.body, next);
     console.log(req.body)
     try {
-        if (programa.nombre != "" && programa.siglas != "" || programa.nombre != null && programa.siglas != null) {
+        if (programa.nombre != "" && programa.siglas != "" && programa.imagen != ""|| programa.nombre != null && programa.siglas != null && programa.imagen != null) {
             
             await programa.save();
             console.log(programa);
