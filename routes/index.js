@@ -35,7 +35,7 @@ module.exports = () => {
     router.post('/programas', programasController.agregaPrograma);
 
     // OBTENER VIDEO 
-    router.get('/programas/:id', programasController.obtenerPrograma);
+    router.get('/programas/:siglas', programasController.obtenerPrograma);
 
     // OBTENER VIDEOS 
     router.get('/programas/', programasController.obtenerProgramas);
