@@ -12,6 +12,10 @@ const videosSchema = new Schema({
     },
     opciones: {
         type: [String]
+    },
+    programa: {
+        type: String,
+        trim: true
     }
 });
 
