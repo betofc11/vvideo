@@ -3,6 +3,7 @@ const router = express.Router();
 
 const usuariosController = require('../controllers/usuariosController');
 const videosController = require('../controllers/videosController');
+const programasController = require('../controllers/programasController');
 
 module.exports = () => {
 
@@ -29,6 +30,18 @@ module.exports = () => {
 
     // ELIMINAR VIDEO 
     router.delete('/videos/:id', videosController.eliminarVideo);
+
+    // AGREGANDO NUEVO PROGRAMA 
+    router.post('/programas', programasController.agregaPrograma);
+
+    // OBTENER VIDEO 
+    router.get('/programas/:id', programasController.obtenerPrograma);
+
+    // OBTENER VIDEOS 
+    router.get('/programas/', programasController.obtenerProgramas);
+
+    // ELIMINAR VIDEO 
+    router.delete('/programas/:id', programasController.eliminarPrograma);
 
     return router;
 }
