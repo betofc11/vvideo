@@ -3,7 +3,6 @@ const routes = require('./routes');
 const mongoose = require('mongoose');
 const session = require('express-session');
 const config = require('./config.json');
-const serverless = require('serverless-http')
 
 // CONECTAR CON MONGO 
 mongoose.Promise = global.Promise;
@@ -30,15 +29,9 @@ app.use(express.urlencoded({ extended: true }));
 // ACTIVAR SESIONES
 app.use(session({
     secret: "GodNashee",
-    cookie: {
-        maxAge: 60000,
-        secure: true
-    },
     resave: false,
     saveUninitialized: true
 }))
-
-app.use('/.netlify/functions', routes())
 
 // RUTAS DE LA APP
 app.use('/', routes());
