@@ -15,8 +15,6 @@ const PORT = process.env.PORT || 4000;
 // CREAR EL SERVIDOR 
 const app = express();
 
-module.exports.handler = serverless(app)
-
 // HABILITAR BODYPARSER 
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
